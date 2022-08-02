@@ -43,10 +43,6 @@ module.exports = {
       {
         value: 'chore',
         name: 'chore: 构建/工程依赖/工具'
-      },
-      {
-        value: 'ci',
-        name: 'ci: CI related changes'
       }
     ],
     messages: {
@@ -55,7 +51,7 @@ module.exports = {
       subject: '请简要描述提交(必填)',
       body: '请输入详细描述(可选)',
       breaking: '列出任何BREAKING CHANGES(破坏性修改)(可选)',
-      footer: '请输入要关闭的issue(可选)',
+      footer: '请输入要关闭的bug号(可选)',
       confirmCommit: '确定提交此说明吗？（y/n）'
     },
     allowCustomScopes: true,

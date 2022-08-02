@@ -7,8 +7,6 @@
     "doc:dev": "pnpm run --filter @geo-way-map/doc dev",
     "doc:build": "pnpm run --filter @geo-way-map/doc build",
     "doc:preview": "pnpm run --filter @geo-way-map/doc preview",
-    "eslint": "eslint --ext .js,.vue --ignore-path ./.gitignore --fix src",
-    "prettier": "prettier --write",
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [],
