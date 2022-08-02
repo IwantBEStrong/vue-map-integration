@@ -16,8 +16,6 @@ importers:
       eslint-plugin-vue: 9.3.0
       prettier: 2.7.1
       typescript: 4.6.4
-      unplugin-auto-import: ^0.10.3
-      unplugin-vue-components: ^0.21.2
     devDependencies:
       '@types/node': 18.6.2
       '@typescript-eslint/eslint-plugin': 5.31.0_zxbndkfdezaxca44jdz4w5itou
@@ -31,8 +29,6 @@ importers:
       eslint-plugin-vue: 9.3.0_eslint@8.20.0
       prettier: 2.7.1
       typescript: 4.6.4
-      unplugin-auto-import: 0.10.3
-      unplugin-vue-components: 0.21.2
 
   application/web-doc:
     specifiers:
@@ -44,6 +40,8 @@ importers:
       rollup: 2.77.2
       sass: 1.54.0
       typescript: 4.6.4
+      unplugin-auto-import: ^0.10.3
+      unplugin-vue-components: ^0.21.2
       vite: 3.0.4
       vite-plugin-cesium: 1.2.19
       vue: 3.2.37
@@ -61,6 +59,8 @@ importers:
       rollup: 2.77.2
       sass: 1.54.0
       typescript: 4.6.4
+      unplugin-auto-import: 0.10.3_rollup@2.77.2+vite@3.0.4
+      unplugin-vue-components: 0.21.2_t6vv62h5jee3sc5tmhqnozb26u
       vite: 3.0.4_sass@1.54.0
       vite-plugin-cesium: 1.2.19_4sckvvs2q6iuspo4f7dds3q4x4
       vue-tsc: 0.38.4_typescript@4.6.4
@@ -2712,7 +2712,7 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /unimport/0.6.4:
+  /unimport/0.6.4_rollup@2.77.2+vite@3.0.4:
     resolution: {integrity: sha512-1cbSeTsC2EwzWeWAyQleajM354y+EYsymxE9p1wDbHKVTEe9XL6+e7vlEv2pj1Zk8YYFf+CBf9QG8My7aDKhag==}
     dependencies:
       '@rollup/pluginutils': 4.2.1
@@ -2724,7 +2724,7 @@ packages:
       pathe: 0.3.2
       scule: 0.3.2
       strip-literal: 0.4.0
-      unplugin: 0.8.0
+      unplugin: 0.8.0_rollup@2.77.2+vite@3.0.4
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -2737,7 +2737,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-auto-import/0.10.3:
+  /unplugin-auto-import/0.10.3_rollup@2.77.2+vite@3.0.4:
     resolution: {integrity: sha512-tODQr7ZBnsBZ9lKaz2mqszKVi/4ALuLtS4gc1xwpcsBav5TCAl0HFSMuai1qL4AkYEwD2HPqK04LocCyK+D0KQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2750,8 +2750,8 @@ packages:
       '@rollup/pluginutils': 4.2.1
       local-pkg: 0.4.2
       magic-string: 0.26.2
-      unimport: 0.6.4
-      unplugin: 0.8.0
+      unimport: 0.6.4_rollup@2.77.2+vite@3.0.4
+      unplugin: 0.8.0_rollup@2.77.2+vite@3.0.4
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -2759,7 +2759,7 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue-components/0.21.2:
+  /unplugin-vue-components/0.21.2_t6vv62h5jee3sc5tmhqnozb26u:
     resolution: {integrity: sha512-HBU+EuesDj/HRs7EtYH7gBACljVhqLylltrCLModRmCToIIrrNvMh54aylUt4AD4qiwylgOx4Vgb9sBlrIcRDw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2778,7 +2778,8 @@ packages:
       magic-string: 0.26.2
       minimatch: 5.1.0
       resolve: 1.22.1
-      unplugin: 0.7.2
+      unplugin: 0.7.2_rollup@2.77.2+vite@3.0.4
+      vue: 3.2.37
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -2787,7 +2788,7 @@ packages:
       - webpack
     dev: true
 
-  /unplugin/0.7.2:
+  /unplugin/0.7.2_rollup@2.77.2+vite@3.0.4:
     resolution: {integrity: sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==}
     peerDependencies:
       esbuild: '>=0.13'
@@ -2806,11 +2807,13 @@ packages:
     dependencies:
       acorn: 8.8.0
       chokidar: 3.5.3
+      rollup: 2.77.2
+      vite: 3.0.4_sass@1.54.0
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.4
     dev: true
 
-  /unplugin/0.8.0:
+  /unplugin/0.8.0_rollup@2.77.2+vite@3.0.4:
     resolution: {integrity: sha512-OzOkJ9XOPlD1Cph6qy/p4i/KSUbs76GToXjH/STHpfo6D7y+EqpfAL6G6HaoOw5QLkt9+KWwcxYUmPFkDf1upQ==}
     peerDependencies:
       esbuild: '>=0.13'
@@ -2829,6 +2832,8 @@ packages:
     dependencies:
       acorn: 8.8.0
       chokidar: 3.5.3
+      rollup: 2.77.2
+      vite: 3.0.4_sass@1.54.0
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.4
     dev: true
