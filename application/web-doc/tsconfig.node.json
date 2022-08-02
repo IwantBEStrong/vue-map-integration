@@ -4,7 +4,6 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "types": ["element-plus/global"],
     "typeRoots": [
       "node_modules/@types", // 默认值
       "src/types"
