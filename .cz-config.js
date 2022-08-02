@@ -56,7 +56,7 @@ module.exports = {
       body: '请输入详细描述(可选)',
       breaking: '列出任何BREAKING CHANGES(破坏性修改)(可选)',
       footer: '请输入要关闭的issue(可选)',
-      confirmCommit: '确定提交此说明吗？'
+      confirmCommit: '确定提交此说明吗？（y/n）'
     },
     allowCustomScopes: true,
     allowBreakingChanges: ['feat', 'fix'], // 当提交类型为feat、fix时才有破坏性修改选项
