@@ -1,0 +1,23 @@
+{
+  "name": "@geo-way-map/cesium",
+  "version": "1.0.0",
+  "description": "吉威空间-三维地图组件库",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "unpkg": "index.js",
+  "jsdelivr": "index.js",
+  "dependencies": {
+    "cesium": "1.95.0",
+    "vue": "3.2.37"
+  },
+  "devDependencies": {
+    "typescript": "4.6.4"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "node_modules/@types", // 默认值
+      "src/types"
+    ]
+  },
+  "include": ["vite.config.ts"]
+}
