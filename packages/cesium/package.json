@@ -1,7 +1,7 @@
 {
   "name": "@vue-map-integration/cesium",
   "version": "1.0.0",
-  "description": "吉威空间-三维地图组件库",
+  "description": "三维地图组件库",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
