@@ -3,7 +3,7 @@ type componentObj = {
     [key: string]: Component;
 };
 import * as Map3D from './components';
-export { GwEarth } from './components';
+export * from './components';
 
 export default {
     install: (app: App<Element>) => {

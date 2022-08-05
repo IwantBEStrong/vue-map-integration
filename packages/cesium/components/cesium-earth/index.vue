@@ -6,7 +6,7 @@
 
 <script lang="ts">
 export default {
-    name: 'GwEarth',
+    name: 'CesiumEarth',
 };
 </script>
 
@@ -14,10 +14,7 @@ export default {
 import { onMounted, onBeforeUnmount, provide, shallowReactive } from 'vue';
 import * as Cesium from 'cesium';
 
-const gwEarth = shallowReactive<{
-    viewer: Cesium.Viewer | null;
-    Cesium: typeof Cesium;
-}>({
+const gwEarth = shallowReactive<GwEarth>({
     viewer: null,
     Cesium,
 });

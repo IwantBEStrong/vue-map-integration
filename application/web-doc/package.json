@@ -1,7 +1,7 @@
 {
   "name": "@vue-map-integration/doc",
   "version": "1.0.0",
-  "description": "",
+  "description": "组件库Api文档",
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev docs",
