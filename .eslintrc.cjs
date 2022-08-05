@@ -6,15 +6,15 @@ module.exports = {
         ecmaVersion: 2020,
         sourceType: 'module',
         ecmaFeatures: {
-            jsx: true
-        }
+            jsx: true,
+        },
     },
 
     extends: [
         'plugin:vue/vue3-recommended',
         'plugin:@typescript-eslint/recommended',
         'prettier',
-        'plugin:prettier/recommended'
+        'plugin:prettier/recommended',
     ],
 
     rules: {
@@ -34,18 +34,18 @@ module.exports = {
             'error',
             {
                 argsIgnorePattern: '^h$',
-                varsIgnorePattern: '^h$'
-            }
+                varsIgnorePattern: '^h$',
+            },
         ],
         'no-unused-vars': [
             'error',
             {
                 argsIgnorePattern: '^h$',
-                varsIgnorePattern: '^h$'
-            }
+                varsIgnorePattern: '^h$',
+            },
         ],
         'space-before-function-paren': 'off',
         quotes: ['error', 'single'],
-        'comma-dangle': 'off'
-    }
+        'comma-dangle': 'off',
+    },
 };

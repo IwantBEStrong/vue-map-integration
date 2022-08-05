@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,8 @@
     "vue": "3.2.37",
     "prismjs": "^1.28.0",
     "element-plus": "2.2.10",
-    "@element-plus/icons-vue": "^2.0.6"
+    "@element-plus/icons-vue": "^2.0.6",
+    "@vue-map-integration/cesium": "workspace:*"
   },
   "devDependencies": {
     "vitepress": "1.0.0-alpha.4",

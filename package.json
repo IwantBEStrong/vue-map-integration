@@ -4,9 +4,9 @@
   "description": "二三维一体化组件库",
   "scripts": {
     "commit": "cz",
-    "doc:dev": "pnpm run --filter @vue-map-integration/template dev",
-    "doc:build": "pnpm run --filter @vue-map-integration/template build",
-    "doc:preview": "pnpm run --filter @vue-map-integration/template preview",
+    "doc:dev": "pnpm run --filter @vue-map-integration/doc dev",
+    "doc:build": "pnpm run --filter @vue-map-integration/doc build",
+    "doc:preview": "pnpm run --filter @vue-map-integration/doc preview",
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [],

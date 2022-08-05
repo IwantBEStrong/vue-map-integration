@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "types": ["element-plus/global"],
-  },
-  "include": ["src/**/*", "types/**/*"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
