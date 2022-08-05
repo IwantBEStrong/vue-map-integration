@@ -3,3 +3,4 @@ dist/
 index.html
 auto-import.d.ts
 components.d.ts
+theme-demo-block/
