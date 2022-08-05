@@ -32,7 +32,7 @@ importers:
 
   application/web-doc:
     specifiers:
-      '@geo-way-map/cesium': workspace:*
+      '@vue-map-integration/cesium': workspace:*
       '@vitejs/plugin-vue': 3.0.0
       cesium: 1.95.0
       element-plus: 2.2.11
@@ -48,7 +48,7 @@ importers:
       vue-router: 4.1.3
       vue-tsc: 0.38.4
     dependencies:
-      '@geo-way-map/cesium': link:../../packages/cesium
+      '@vue-map-integration/cesium': link:../../packages/cesium
       cesium: 1.95.0
       element-plus: 2.2.11_vue@3.2.37
       pinia: 2.0.17_3wx4hvlpf33h4r5e7sgliqloou

@@ -1,5 +1,5 @@
 {
-  "name": "@geo-way-map/doc",
+  "name": "@vue-map-integration/doc",
   "private": true,
   "version": "0.0.1",
   "scripts": {
@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@geo-way-map/cesium": "workspace:*",
+    "@vue-map-integration/cesium": "workspace:*",
     "cesium": "1.95.0",
     "element-plus": "2.2.11",
     "pinia": "2.0.17",
