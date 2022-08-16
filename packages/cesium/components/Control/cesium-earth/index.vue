@@ -13,12 +13,25 @@ export default {
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, provide, shallowReactive } from 'vue';
 import * as Cesium from 'cesium';
+import { layersChange } from './layersChange';
 
 const gwEarth = shallowReactive<GwEarth>({
     viewer: null,
     Cesium,
 });
 provide('gwEarth', gwEarth);
+
+onMounted(() => {
+    initMap();
+    layersChange(gwEarth);
+});
+
+onBeforeUnmount(() => {
+    if (gwEarth.viewer !== null) {
+        gwEarth.viewer.destroy();
+        gwEarth.viewer = null;
+    }
+});
 
 const initMap = () => {
     gwEarth.Cesium.Ion.defaultAccessToken =
@@ -70,15 +83,6 @@ const initMap = () => {
     gwEarth.viewer.scene.screenSpaceCameraController.minimumZoomDistance = 10;
     gwEarth.viewer.scene.screenSpaceCameraController.maximumZoomDistance = 24000000;
 };
-onMounted(() => {
-    initMap();
-});
-onBeforeUnmount(() => {
-    if (gwEarth.viewer !== null) {
-        gwEarth.viewer.destroy();
-        gwEarth.viewer = null;
-    }
-});
 </script>
 
 <style lang="scss" scoped>

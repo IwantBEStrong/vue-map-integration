@@ -9,21 +9,30 @@ export default {
 
 <script setup lang="ts">
 import { ImageryLayer } from 'cesium';
-import { inject, onBeforeUnmount, onMounted, ref } from 'vue';
+import {
+    inject,
+    onBeforeUnmount,
+    onMounted,
+    reactive,
+    ref,
+    shallowRef,
+} from 'vue';
 
 interface Props {
     url: string;
     token: string;
+    zIndex: number;
     subdomains?: Array<string>;
     layer?: string;
     style?: string;
     format?: string;
     tileMatrixSetID?: string;
 }
-const layer = ref<ImageryLayer | undefined>(undefined);
-const gwEarth: GwEarth | undefined = inject('gwEarth');
+const layer = shallowRef<ImageryLayer | undefined>(undefined);
+const gwEarth = inject<GwEarth>('gwEarth');
 const props = withDefaults(defineProps<Props>(), {
     subdomains: () => ['0', '1', '2', '3', '4', '5', '6', '7'],
+    zIndex: 1,
     layer: 'tdtCiaLayer',
     style: 'default',
     format: 'image/jpeg',
@@ -36,7 +45,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
     if (layer.value) {
-        layer.value.destroy();
+        gwEarth?.viewer?.imageryLayers.remove(layer.value, true);
         layer.value = undefined;
     }
 });

@@ -15,6 +15,10 @@ function getComponentsSidebar() {
         {
           text: 'cesium-tdt-layer',
           link: '/components/tdtLayer'
+        },
+        {
+          text: 'cesium-geojson-layer',
+          link: '/components/geojsonLayer'
         }
       ]
     }

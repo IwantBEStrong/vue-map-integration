@@ -1,2 +1,3 @@
-export { default as CesiumEarth } from './cesium-earth/index.vue';
-export { default as CesiumTdtLayer } from './cesium-tdt-layer/index.vue';
+export { default as CesiumEarth } from './Control/cesium-earth/index.vue';
+export { default as CesiumTdtLayer } from './BaseLayers/cesium-tdt-layer/index.vue';
+export { default as CesiumGeojsonLayer } from './FeatureLayers/cesium-geojson-layer/index.vue';
