@@ -21,7 +21,7 @@ import {
 interface Props {
     url: string;
     token: string;
-    zIndex: number;
+    zIndex?: number;
     subdomains?: Array<string>;
     layer?: string;
     style?: string;

@@ -9,11 +9,11 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { inject, onBeforeUnmount, onMounted, shallowRef, watch } from 'vue';
-import { Color, DataSource, Resource } from 'cesium';
-import { useOrderByZIndex } from '../../../hooks/useOrderByZIndex';
+import { onMounted, watch } from 'vue';
+import { Color, Resource } from 'cesium';
+import { useFeature } from '../hooks/useFeature';
 interface FeatureLayerProps {
-    source: Resource | string | object;
+    source: Resource | string | Document | Blob | object;
     show?: boolean;
     zIndex?: number;
     fill?: string;
@@ -26,8 +26,6 @@ interface FeatureLayerProps {
     circleOutLineWidth?: number;
 }
 
-const gwEarth = inject<GwEarth>('gwEarth');
-const layer = shallowRef<DataSource | undefined>(undefined);
 const props = withDefaults(defineProps<FeatureLayerProps>(), {
     source: '',
     show: true,
@@ -42,33 +40,27 @@ const props = withDefaults(defineProps<FeatureLayerProps>(), {
     circleOutLineWidth: 3,
 });
 
-const { orderLayer } = useOrderByZIndex(gwEarth);
+const { clear, gwEarth, initLayer } = useFeature(props);
 
 watch(
-    () => props.zIndex,
-    (zIndex) => {
-        if (layer.value) {
-            layer.value.zIndex = zIndex;
-            orderLayer(gwEarth?.viewer?.dataSources);
-        }
-    },
-);
-
-watch(
-    () => props.show,
-    (show) => {
-        if (layer.value) {
-            layer.value.show = show;
-        }
+    [
+        () => props.source,
+        () => props.fill,
+        () => props.strokeWidth,
+        () => props.stroke,
+        () => props.clampToGround,
+        () => props.circleRadius,
+        () => props.circleFill,
+        () => props.circleOutLineColor,
+        () => props.circleOutLineWidth,
+    ],
+    () => {
+        addLayer();
     },
 );
 
 onMounted(() => {
     addLayer();
-});
-
-onBeforeUnmount(() => {
-    clear();
 });
 
 function addLayer() {
@@ -80,7 +72,6 @@ function addLayer() {
         clampToGround: props.clampToGround,
     }).then((dataSources) => {
         dataSources.entities.values.forEach((entity) => {
-            debugger;
             if (entity.billboard) {
                 entity.billboard = undefined;
                 entity.point = new gwEarth.Cesium.PointGraphics({
@@ -93,19 +84,8 @@ function addLayer() {
                 });
             }
         });
-        gwEarth?.viewer?.dataSources.add(dataSources).then((data) => {
-            layer.value = data;
-            layer.value.zIndex = props.zIndex;
-            layer.value.show = props.show;
-        });
+        initLayer(dataSources);
     });
-}
-
-function clear() {
-    if (layer.value) {
-        gwEarth?.viewer?.dataSources.remove(layer.value, true);
-        layer.value = undefined;
-    }
 }
 </script>
 
